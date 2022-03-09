@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teste Frontend Seti</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <style>
+
+    html {
+      font-family: "Inter", sans-serif;
+    }
+    
+    @supports (font-variation-settings: normal) {
+      html {
+        font-family: "Inter var", sans-serif;
+      }
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: #a7beff;
+      color: #071723;
+    }
+    
+    .box {
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
+      margin: 20px auto;
+      overflow: hidden;
+      width: 550px;
+    }
+    
+    .space {
+      margin-bottom: 16px;
+    }
+    
+    .space-md {
+      margin-bottom: 32px;
+    }
+    
+    .label {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .header {
+      height: 147px;
+      padding: 23px 36px;
+      width: 120%;
+    }
+    
+    .logo {
+      background: url(images/seti-black.png) center right no-repeat;
+      height: 60px;
+      width: 130px;
+      float: right;
+    }
+    
+    .header .title {
+      color: #b91818;
+      font-size: 23px;
+      font-weight: 300;
+      text-align: center
+    }
+    
+    .header .title span {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 1.46;
+    }
+    
+    .form textarea {
+      background: #e9dddd;
+      border: 1px solid #2f3676;
+      border-radius: 8px;
+      color: #071723;
+      height: 140px;
+      padding: 16px;
+      resize: none;
+      width: 100%;
+      font-size: 14px;
+    }
+    
+    .fieldset {
+      padding: 0 32px;
+    }
+    
+    .counter {
+      display: flex;
+      align-items: center;
+    }
+    
+    .counter svg {
+      fill: #2f3676;
+    
+    }
+    
+    .counter input {
+      background: #dde3e9;
+      border: 1px solid #2f3676;
+      border-radius: 10px;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0 5px;
+      width: 50px;
+      height: 42px;
+      padding: 5px;
+      text-align: center;
+     
+    }
+    
+    .footer {
+      padding: 32px;
+      background: #dde3e9;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .footer button {
+      appearance: none;
+      background: #2f3676;
+      border: 0;
+      border-radius: 8px;
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 8px 32px;
+    }
+    
+    .footer button:focus,
+    .footer button:hover {
+      border: 2px solid #2f3676;
+      background: #191847;
+    }
+    
+    </style>
+<form>
+<div class="box">
+<div class="header">
+<div class="logo"></div>
+<div class="title">Formulário<br />para compra de<br /><span>código</span></div>
+</div>
+<div class="space"></div>
+<div class="form">
+<div class="space"></div>
+<div class="fieldset">
+<div class="label">Quais linguagens você deseja:</div>
+<div class="space"></div>
+<div><input type="checkbox" /> Vue.js</div>
+<div><input type="checkbox" /> Java</div>
+<div><input type="checkbox" /> C/C++</div>
+<div><input type="checkbox" /> C#</div>
+<div><input type="checkbox" /> PHP</div>
+</div>
+<div class="space-md"></div>
+<div class="fieldset">
+<div class="label">Quantos códigos de cada?</div>
+<div class="space"></div>
+<div class="counter">
+<svg onClick="Diminuir();" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+<path
+d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z" />
+</svg>
+<input type="text" value="0" id="percentual" onchange="ValidarInput()" />
+<svg onClick="Aumentar();" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+<path
+d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z" />
+</svg>
+</div>
+</div>
+<div class="space-md"></div>
+<div class="fieldset">
+<div class="label">Observações:</div>
+<div class="space"></div>
+<textarea name="descricao" placeholder="Alguma dúvida? Recomendação?"></textarea>
+</div>
+<div class="space-md"></div>
+<div class="footer">
+<button>Enviar</button>
+</div>
+</div>
+</div>
+</form>
+<script>
+function ValidarInput() {
+const input = document.getElementById("percentual")
+const inputValorNumero = Number(input.value)
+const inputValido = typeof inputValorNumero === 'number' && Number.isSafeInteger(inputValorNumero)
+const valorFinal = inputValido ? inputValorNumero : 0
+input.value = valorFinal
+}
+function Diminuir() {
+const input = document.getElementById("percentual")
+const inputValorNumero = Number(input.value)
+const inputValido = inputValorNumero > 0
+const valorFinal = inputValido ? inputValorNumero - 1 : 0
+input.value = valorFinal
+}
+function Aumentar() {
+const input = document.getElementById("percentual")
+const inputValorNumero = Number(input.value)
+const inputValido = inputValorNumero >= 0
+const valorFinal = inputValido ? inputValorNumero + 1 : 0
+input.value = valorFinal;
+}
+</script>
+</body>
+</html>
