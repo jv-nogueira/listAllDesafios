@@ -1,0 +1,216 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+body {
+    width: 100%;
+    min-height: 32px;
+    min-width: 36px;
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 60%;
+    
+}
+
+.instagram-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.instagram-phone img { /* não é possível diminuir a margem porque a imagem é grande*/
+    height: 700px;
+    width: 700px;
+}
+
+.inputBox {
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.inputUser {
+    
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    /* outline: none; é a borda na hora que clica, ai enfatiza*/
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    padding: 14px 0 2px 8px;
+    width: 266px;
+    height: 36px;
+    letter-spacing: 2px;
+    background-color: rgb(243, 243, 243);
+
+}
+
+.labelInput {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    pointer-events: none;
+    transition: .1s;
+    font-size: 12px;
+}
+
+.inputUser:focus ~ .labelInput, 
+.inputUser:valid ~ .labelInput {
+    top: -0;
+    font-size: 10px;
+    color: rgb(160, 160, 160);
+}
+
+.instagram-continue {
+    display: flex;
+    align-items: center; /* horizontal */
+    justify-content: space-around; /* vertical */
+    flex-direction: column;
+    min-height: 34rem;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 350px;
+    height: 374px;
+    margin: 10px 0;
+    padding: 10px 0;
+    border: 1px solid lightgray;
+    color: rgb(160, 160, 160);
+}
+
+.group2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 350px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
+
+.group:nth-child(1) {
+    min-height: 19rem;
+}
+
+#submit{
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(13, 154, 219));
+    width: 266px;
+    height: 36px;
+    border: none;
+    margin: 8px 0;
+    padding: 9px 5px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.instagram-logo {
+    height: 51px;
+    width: 175px;
+    margin: 36px 0;
+}
+
+.profile-photo img {
+    height: 6rem;
+}
+
+
+
+.instagram-logout {
+    color: #0095f6;
+    margin-top: 1rem;
+}
+
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+.link-blue {
+    color: #0095f6;
+}
+
+.get-the-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 102px;
+
+}
+
+.download {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.app-download { /* apple store e google play*/
+    height: 40px;
+    width: 136px;
+    background-size: cover;
+}
+
+
+.app-download:nth-child(1) {
+    background-image: url('./img/apple-button.png');
+    margin-right: 8px;
+}
+
+.app-download:nth-child(2) {
+    background-image: url('./img/googleplay-button.png');
+}
+
+/* media queries */
+
+
+@media (max-width: 1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none;
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+    
+    .group {
+        border: 1px solid transparent;
+    }
+}

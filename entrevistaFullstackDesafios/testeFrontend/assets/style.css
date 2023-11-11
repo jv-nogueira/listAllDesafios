@@ -1,0 +1,112 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+
+}
+
+.parent {
+    position: relative; 
+    float: left; 
+    margin: 50px;
+
+}
+
+.background-relative {
+     position: relative; /* serve para deixar a imagem em cima da outra (baixo) */
+     
+}
+
+.background-absolute {
+    position: absolute; /* serve para deixar a imagem em cima da outra (cima)*/
+    top: 0; 
+    right: 0;
+    
+}
+
+.little-items-and-logo { /* usado uma class para todos os little elements inferiores */
+    position: absolute;
+    padding-top: 52px;
+    padding-left: 50px;
+}
+
+.transparencia {
+    position: absolute;
+    opacity: 0.8;
+}
+
+.sobreposicao { 
+    position: absolute;
+    padding-top: 52px;
+    padding-left: 50px;
+}
+
+.sobrepor {
+   /* com esta class foi possível deixar a perninha da imagem por baixo da class transparencia*/
+}
+
+.text-site {
+    position: absolute;
+    font-size: 15px;
+    color: rgb(49, 56, 63);
+    padding-top: 510px;
+    padding-left: 80px;
+}
+
+.text-buttom {
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding-top: 485px;
+    padding-left: 85px;
+}
+
+.text-phone {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding-top: 100px;
+    padding-left: 380px;
+}
+
+.more-info {
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding-top: 90px;
+    padding-left: 460px;
+}
+
+.text-little-left {
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding-top: 370px;
+    padding-left: 85px;
+}
+
+.text-little-left b { /* essa tag deixa a palavra em negrito alem de mudar a cor*/
+    position: absolute;
+    color: black;
+
+}
+
+.text-big-left {
+    position: absolute;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    padding-top: 220px;
+    padding-left: 85px;
+    line-height: 1;
+}
+
+.text-big-left b { /* essa tag deixa a palavra em negrito alem de mudar a cor*/
+    position: absolute;
+    color: rgb(255, 255, 255);
+
+}

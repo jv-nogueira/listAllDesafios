@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+        }
+        .box {
+            color: white;
+            position: absolute;
+            top: 50%;                                /* ajusta a altura do formulário */
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 25%;
+        }
+        fieldset{
+            border: 3px solid dodgerblue;
+        }
+        legend{
+            border: 1px solid dodgerblue;
+            padding: 10px;
+            text-align: center;
+            background-color: dodgerblue;
+            border-radius: 8px;
+        }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+
+
+
+
+            .aumentarCaixa{
+                border: none;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        width: 65%;  
+            }
+
+    
+            #submit{
+            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(13, 154, 219));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #submit:hover{
+            background-image: linear-gradient(to left,rgb(17, 54, 71), rgba(13, 154, 219));
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms de cadastro</title>
+</head>
+<body>
+    <div class="box"> 
+    <form>
+        <fieldset> 
+            <legend><b>Cadastro</b></legend>
+            <br>
+    <div class="inputBox">
+        <label for="nome" class="labelInput">Nome completo</label>
+        <input type="text" name="nome" id="nome" class="inputUser" required>
+
+        <br>
+    </div>
+    <br>
+    <div class="inputBox">
+        <label for="nascimento" >Data de nascimento</label>
+        <input type="date" name="nascimento" id="nascimento" class="inputUser" required>
+        <br>
+
+    </div>
+    <br>
+    <div class="inputBox">
+        <label for="user" class="labelInput">Nome de usuário</label>
+        <input type="login" name="user" id="user" class="inputUser" required oninvalid="this.setCustomValidity('Não utilize o nome de usuário cloud, lx2018 ou kiwi')" onchange="try{setCustomValidity('')}catch(e){}">
+        <br>
+    </div>
+    <br>
+    <div class="inputBox">
+        <label for="email" class="labelInput">E-mail</label>
+        <input type="email" name="email" id="email" class="inputUser" required>
+        <br>
+    </div>
+    <br>
+    <div class="inputBox">
+        <label for="senha" class="labelInput">Senha</label>
+        <input type="password" name="senha" id="senha" class="inputUser" pattern="^(?=.*[!?@#$&*])(?=.*[0-9]).{6,50}$" required oninvalid="this.setCustomValidity('Utilize no mínimo 6 caracteres entre eles um caractere especial e um número')">
+    </div>
+    <br>
+
+    <!-- <button type="submit" class='btn' onclick="funcao1()">Me inscrever</button> -->
+    <input type="submit" id="submit" value="Me inscrever" onclick="funcao1()">
+
+
+</fieldset>
+        </form>
+    </div>
+
+        <script>
+
+function funcao1()
+{
+
+    var nome = document.getElementById("nome").value;
+    var nascimento = document.getElementById("nascimento").value;
+    var user = document.getElementById("user").value;
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+
+    if (nome==""|| nascimento==""|| user==""|| email==""|| senha=="") {
+        alert("Preencha todos os campos");
+        return false;
+      }
+      else if(user=="cloud"|| user=="lx2018"|| user=="kiwi"){
+        alert("Nome de usuário inválido");
+      }
+      else
+      
+      {
+      
+      document.write("<center><h1>Você foi cadastrado com sucesso!</h1></center>");
+      }
+  
+
+
+}
+
+   
+   
+     </script>
+</body>
+</html>
